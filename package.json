@@ -1,0 +1,20 @@
+{
+  "name": "cicd-box",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm tsc -p tsconfig.json",
+    "start:dev": "node --loader ts-node/esm src/main.ts"
+  },
+  "keywords": [],
+  "author": "Iman Hosseini Pour",
+  "license": "ISC",
+  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "fastify": "^4.26.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  }
+}
