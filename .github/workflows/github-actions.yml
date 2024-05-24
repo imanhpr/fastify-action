@@ -16,5 +16,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: echo 'node version is :' $(node --version)
+
       - name: Run unit tests.
         run: pnpm test
