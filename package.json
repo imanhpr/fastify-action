@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "pnpm tsc -p tsconfig.json",
-    "start:dev": "node --loader ts-node/esm src/main.ts"
+    "start:dev": "node --loader ts-node/esm src/main.ts",
+    "test": "pnpm vitest --run"
   },
   "keywords": [],
   "author": "Iman Hosseini Pour",
