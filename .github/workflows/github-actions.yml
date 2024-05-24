@@ -20,10 +20,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: echo 'node version is :' $(node --version)
+      - run: node --version
       - uses: pnpm/action-setup@v4
         with:
           version: 9
+      - run: |
+          corepack enable
+          pnpm --version
 
+      - run: pnpm install
       - name: Run unit tests.
         run: pnpm test
