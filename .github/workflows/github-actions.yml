@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 20
       - run: echo 'node version is :' $(node --version)
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - name: Run unit tests.
         run: pnpm test
