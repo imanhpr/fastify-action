@@ -16,4 +16,7 @@ describe('User Service tests', () => {
     const result = userService.getUserById(1);
     expect(result).toStrictEqual(new User(1, 'Iman', 'Hpr'));
   });
+  test('it should be ok', () => {
+    expect(1).toBe(1);
+  });
 });
