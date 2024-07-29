@@ -14,4 +14,4 @@ jobs:
       - name: install deps
         run: npm install
       - name: run tests
-        run: vitest --run
+        run: npx vitest --run
