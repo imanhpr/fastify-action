@@ -13,9 +13,9 @@ jobs:
     steps:
       - name: get codes
         uses: actions/checkout@v4
-      - name: install deps
-        run: npm install
-      - name: run tests
-        run: npx vitest --run
-      - name: echo env
-        run: echo ${{ env.HELLO }}
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: |
+            - recursive: false
+              args: [--frozen-lockfile, --strict-peer-dependencies]
