@@ -7,29 +7,27 @@ on:
 
 env:
   HELLO: salam
-  NODE_ENV: ${{github.env.NODE_ENV}}
 jobs:
   test:
-    environment: development
     runs-on: ubuntu-latest
     steps:
-      - name: get codes
-        uses: actions/checkout@v4
-      - name: install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: |
-            - recursive: false
-              args: [--frozen-lockfile, --strict-peer-dependencies]
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
-      - name: pnpm version and node version
-        run: echo "node:$(node --version) - pnpm:$(pnpm --version)"
+      # - name: get codes
+      #   uses: actions/checkout@v4
+      # - name: install pnpm
+      #   uses: pnpm/action-setup@v4
+      #   with:
+      #     run_install: |
+      #       - recursive: false
+      #         args: [--frozen-lockfile, --strict-peer-dependencies]
+      # - name: Install Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+      #     cache: 'pnpm'
+      # - name: pnpm version and node version
+      #   run: echo "node:$(node --version) - pnpm:$(pnpm --version)"
 
-      - name: run tests
-        run: pnpm test
+      # - name: run tests
+      #   run: pnpm test
       - name: echo NODE_ENV
-        run: echo ${{env.NODE_ENV}}
+        run: echo ${{github.env}}
