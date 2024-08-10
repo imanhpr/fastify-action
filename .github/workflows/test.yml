@@ -6,7 +6,7 @@ on:
     branches: main
 
 env:
-  ENV: ${{vars.NODE_ENV}}
+  ENVTEST1: ${{vars.NODE_ENV}}
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -33,4 +33,4 @@ jobs:
       - name: echo vars
         run: echo ${{vars.NODE_ENV}}
       - name: echo env
-        run: echo ${{env.ENV}}
+        run: echo ${{env.ENVTEST1}}
