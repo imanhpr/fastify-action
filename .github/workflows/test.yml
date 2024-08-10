@@ -10,6 +10,7 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: development
     steps:
       # - name: get codes
       #   uses: actions/checkout@v4
@@ -30,4 +31,4 @@ jobs:
       # - name: run tests
       #   run: pnpm test
       - name: echo NODE_ENV
-        run: echo ${{github.env}}
+        run: echo ${{env}}
