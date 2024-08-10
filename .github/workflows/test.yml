@@ -32,4 +32,4 @@ jobs:
       - name: run tests
         run: pnpm test
       - name: echo NODE_ENV
-        run: evho ${{env.NODE_ENV}}
+        run: echo ${{env.NODE_ENV}}
