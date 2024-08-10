@@ -33,4 +33,4 @@ jobs:
       # - name: run tests
       #   run: pnpm test
       - name: echo NODE_ENV
-        run: echo ${{vars}}
+        run: echo ${{env}}
