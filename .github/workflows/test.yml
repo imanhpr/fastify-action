@@ -8,12 +8,9 @@ on:
 env:
   HELLO: salam
 jobs:
-  env:
-    HELLO_TEST: ${{vars.NODE_ENV}}
   test:
     runs-on: ubuntu-latest
     environment: development
-
     steps:
       # - name: get codes
       #   uses: actions/checkout@v4
