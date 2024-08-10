@@ -7,8 +7,9 @@ on:
 
 env:
   HELLO: salam
-  NODE_ENV: ${{vars.NODE_ENV}}
 jobs:
+  env:
+    HELLO_TEST: ${{vars.NODE_ENV}}
   test:
     runs-on: ubuntu-latest
     environment: development
