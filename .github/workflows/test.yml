@@ -29,6 +29,6 @@ jobs:
       # - name: run tests
       #   run: pnpm test
       - name: echo vars
-        run: echo ${{vars}}
+        run: echo '${{ toJSON(vars) }}'
       - name: echo env
-        run: echo ${{env}}
+        run: echo '${{ toJSON(env) }}'
