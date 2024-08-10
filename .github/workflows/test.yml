@@ -31,6 +31,6 @@ jobs:
       # - name: run tests
       #   run: pnpm test
       - name: echo vars
-        run: echo ${{vars.NODE_ENV}}
+        run: echo ${{toJson(vars)}}
       - name: echo env
-        run: echo ${{env.ENVTEST1}}
+        run: echo ${{toJson(env)}}
