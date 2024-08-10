@@ -5,6 +5,8 @@ on:
   pull_request:
     branches: main
 
+env:
+  HELLO: salam
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,3 +17,5 @@ jobs:
         run: npm install
       - name: run tests
         run: npx vitest --run
+      - name: echo env
+        run: echo ${{ env.HELLO }}
