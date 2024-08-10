@@ -26,3 +26,6 @@ jobs:
           cache: 'pnpm'
       - name: pnpm version and node version
         run: echo "node:$(node --version) - pnpm:$(pnpm --version)"
+
+      - name: run tests
+        run: pnpm test
