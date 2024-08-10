@@ -19,3 +19,10 @@ jobs:
           run_install: |
             - recursive: false
               args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: pnpm version and node version
+        run: echo "node:$(node --version) - pnpm:$(pnpm --version)"
