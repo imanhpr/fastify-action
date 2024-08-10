@@ -7,8 +7,10 @@ on:
 
 env:
   HELLO: salam
+  NODE_ENV: ${{github.env.NODE_ENV}}
 jobs:
   test:
+    environment: development
     runs-on: ubuntu-latest
     steps:
       - name: get codes
@@ -29,3 +31,5 @@ jobs:
 
       - name: run tests
         run: pnpm test
+      - name: echo NODE_ENV
+        run: evho ${{env.NODE_ENV}}
