@@ -5,9 +5,12 @@ on:
   pull_request:
     branches: main
 
+env:
+  ENV: ${{vars.NODE_ENV}}
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: development
     steps:
       # - name: get codes
       #   uses: actions/checkout@v4
@@ -29,3 +32,5 @@ jobs:
       #   run: pnpm test
       - name: echo vars
         run: echo ${{vars.NODE_ENV}}
+      - name: echo env
+        run: echo ${{env.ENV}}
