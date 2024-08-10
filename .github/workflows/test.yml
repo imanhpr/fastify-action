@@ -10,7 +10,6 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: development
     steps:
       # - name: get codes
       #   uses: actions/checkout@v4
