@@ -11,6 +11,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     environment: development
+    env:
+      NODE_ENV: ${{vars.NODE_ENV}}
+
     steps:
       # - name: get codes
       #   uses: actions/checkout@v4
