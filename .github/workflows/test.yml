@@ -4,32 +4,31 @@ on:
     branches: main
   pull_request:
     branches: main
-env:
-  ENV: ${{ vars.NODE_ENV }}
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # - name: get codes
-      #   uses: actions/checkout@v4
-      # - name: install pnpm
-      #   uses: pnpm/action-setup@v4
-      #   with:
-      #     run_install: |
-      #       - recursive: false
-      #         args: [--frozen-lockfile, --strict-peer-dependencies]
-      # - name: Install Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      #     cache: 'pnpm'
-      # - name: pnpm version and node version
-      #   run: echo "node:$(node --version) - pnpm:$(pnpm --version)"
-
-      # - name: run tests
-      #   run: pnpm test
-      - name: echo vars
-        run: echo '${{ toJSON(vars) }}'
-      - name: echo env
-        run: echo '${{ toJSON(env) }}'
+      - name: get codes
+        uses: actions/checkout@v4
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: |
+            - recursive: false
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: pnpm version and node version
+        run: echo "node:$(node --version) - pnpm:$(pnpm --version)"
+      - name: run tests
+        id: test-step
+        run: pnpm test
+      - name: upload test result
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-result
+          path: test-output.json

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "pnpm tsc -p tsconfig.json",
     "start:dev": "node --loader ts-node/esm src/main.ts",
-    "test": "pnpm vitest --run"
+    "test": "pnpm vitest --run --reporter=json --reporter=default --outputFile=./test-output.json"
   },
   "author": "Iman Hosseini Pour",
   "license": "ISC",
