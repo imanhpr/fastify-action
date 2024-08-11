@@ -35,3 +35,5 @@ jobs:
           path: test-output.json
   deploy:
     uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      name: ${{vars.NODE_ENV}}

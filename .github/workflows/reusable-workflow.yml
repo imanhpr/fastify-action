@@ -1,7 +1,13 @@
 name: Reusable workflow
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        description: your name to echo
+        type: string
 jobs:
   echojob:
     runs-on: ubuntu-latest
     steps:
-      - run: echo build from reusable workflow
+      - run: echo your name is ${{ inputs.name }}
