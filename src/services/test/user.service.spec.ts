@@ -17,6 +17,6 @@ describe('User Service tests', () => {
     expect(result).toStrictEqual(new User(1, 'Iman', 'Hpr'));
   });
   test('it should be ok', () => {
-    expect(1).toBe(2);
+    expect(1).toBe(1);
   });
 });

@@ -33,3 +33,5 @@ jobs:
         with:
           name: test-result
           path: test-output.json
+      - name: run reusable workflow
+        uses: ./.github/workflows/reusable-workflow.yml
